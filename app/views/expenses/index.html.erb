@@ -33,7 +33,7 @@
               <td><%= expense.price*expense.amount%>₴</td>
               <td><%= expense.description %></td>
               <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
-              <td><%= link_to 'Delete', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= button_to 'Delete', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
             <% $total_sum += expense.price*expense.amount %>
         <% end %>    
