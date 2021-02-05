@@ -1,0 +1,49 @@
+<!--<p id="notice"><%= notice %></p> -->
+<% $total_sum = 0.0%>
+<h1>Expenses</h1>
+
+
+<table class="table table-sm">
+  <thead class="thead-dark">
+    <tr>
+      <th><%= sortable "name", "Spending"%></th>
+      <th>Category</th>
+      <th>Amount</th>
+      <th><%= sortable "price", "Price" %></th>
+      <th><%= sortable "price", "Total Price" %></th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+ 
+      <% @expenses.each do |expense| %>
+        <% if expense.user_id == Current.user.id%>
+            <% if expense.price == nil ||  expense.amount == nil %>
+              <%= expense.price=0 %>
+              <%= expense.amount=0%>
+            <%end%>
+            <tr>
+              <td><%= expense.name %></td>
+        
+              <td><%= expense.category %></td>
+              <td><%= expense.amount %></td>
+              <td><%= expense.price %>₴</td>
+              <td><%= expense.price*expense.amount%>₴</td>
+              <td><%= expense.description %></td>
+              <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
+              <td><%= link_to 'Delete', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% $total_sum += expense.price*expense.amount %>
+        <% end %>    
+      <% end %>
+  </tbody>
+</table>
+
+
+  <span align="right">
+    <h4>Total expense: <%= $total_sum%>₴</h4>
+  </span>
+
+<%= link_to 'New Spending', new_expense_path, class:"btn btn-outline-dark"%>
