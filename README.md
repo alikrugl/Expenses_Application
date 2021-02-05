@@ -1,6 +1,6 @@
 # Expenses Tracking Application #
 
-###Getting started###
+###Getting started
 
 To get started with the app, first clone the repository and cd into the directory:
 ```
