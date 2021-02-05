@@ -11,9 +11,9 @@ Then install the needed gem
 $ bundle install --without production
 
 Next, migrate the database:
-
+```
 $ rails db:migrate
-
+```
 Finally, run the the app in a local server:
 
 $ rails server
