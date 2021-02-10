@@ -1,0 +1,53 @@
+<h3 align ="center"> Expenses of friends</h3>
+
+  <%uniq_email2 = 'al'%>
+  <% Subscriber.all.each  do |subscriber| %>
+    <% uniq_email1 = subscriber.email %>
+    <% if uniq_email1 != uniq_email2 %>
+      <% uniq_email2 = uniq_email1 %>
+      <% if subscriber.sub_email == Current.user.email %>
+         <h5>Expenses of  <%= subscriber.email%> </h5>
+          <table class="table table-sm">
+            <thead class="thead-dark">
+              <tr>
+                <th>Spending</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Price</th>
+                <th>Total price</th>
+                <th>Description</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+      
+      <% end %>    
+    <% end %>   
+   
+    <tbody>
+    <% $total_sum = 0.0%>
+      <% Expense.all.each do |expense| %>
+        <% if subscriber.sub_email == Current.user.email %>
+          <% if expense.user_id == User.find_by(email: subscriber.email).id %>
+            <tr>
+              <td><%= expense.name %></td>
+
+              <td><%= expense.category %></td>
+              <td><%= expense.amount %></td>
+              <td><%= expense.price %>₴</td>
+              <td><%= expense.price*expense.amount%>₴</td>
+              <td><%= expense.description %></td>
+            </tr>
+            <% $total_sum += expense.price*expense.amount %>
+          <% end %>    
+        <% end %>
+      <% end %> 
+   
+  </tbody>
+</table > 
+  <% if $total_sum!=0%>    
+    <span align="right">
+      <h6>Total expense: <%= $total_sum %>₴</h6>
+    </span>
+  <%end%>
+<% end %>  
+<%= link_to 'Back', expenses_path, class: "btn btn-outline-dark"%>

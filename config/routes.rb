@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :subscribers
   resources :expenses
 
   get 'expenses', to: "expenses#new"
