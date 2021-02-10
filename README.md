@@ -19,6 +19,7 @@ Finally, run the the app in a local server:
 ```
 $ rails server
 ```
+### Here the images of the application: 
 
 ## Sign up :
 ![Sign up tab](https://github.com/alikrugl/Expenses_Application/blob/main/sign%20up.png)
