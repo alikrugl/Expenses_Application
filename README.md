@@ -19,3 +19,4 @@ Finally, run the the app in a local server:
 ```
 $ rails server
 ```
+![Expenses tab](https://github.com/alikrugl/Expenses_Application/blob/main/expenses.png)
