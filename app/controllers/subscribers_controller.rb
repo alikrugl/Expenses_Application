@@ -25,7 +25,7 @@ class SubscribersController < ApplicationController
   def create
     @subscriber = Subscriber.new(subscriber_params)
     @subscriber.email = Current.user.email
-
+     
     respond_to do |format|
       if @subscriber.save
         format.html { redirect_to expenses_path, notice: "List successfully shared with  #{@subscriber.sub_email}" }
