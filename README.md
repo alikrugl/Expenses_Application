@@ -20,17 +20,17 @@ Finally, run the the app in a local server:
 $ rails server
 ```
 
-#### Sign up :
+## Sign up :
 ![Sign up tab](https://github.com/alikrugl/Expenses_Application/blob/main/sign%20up.png)
 
-#### Expenses :
+## Expenses :
 ![Expenses tab](https://github.com/alikrugl/Expenses_Application/blob/main/expenses.png)
 
-#### Shared list :
+## Shared list :
 ![Shared list tab](https://github.com/alikrugl/Expenses_Application/blob/main/shared%20list.png)
 
-#### Share list :
+## Share list :
 ![Share list  tab](https://github.com/alikrugl/Expenses_Application/blob/main/share%20list.png)
 
-#### Login :
+## Login :
 ![Login tab](https://github.com/alikrugl/Expenses_Application/blob/main/login.png)
