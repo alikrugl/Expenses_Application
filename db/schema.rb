@@ -12,13 +12,16 @@
 
 ActiveRecord::Schema.define(version: 2021_02_10_074901) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "expenses", force: :cascade do |t|
     t.string "name", null: false
     t.text "description"
     t.string "category", default: "Others"
     t.integer "amount", null: false
     t.decimal "price", null: false
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_expenses_on_user_id"
