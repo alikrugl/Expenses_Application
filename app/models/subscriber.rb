@@ -1,5 +1,4 @@
 class Subscriber < ApplicationRecord
-
     def check_equals
         errors.add(:email, "is yours. ") if email == sub_email
     end
@@ -12,9 +11,4 @@ class Subscriber < ApplicationRecord
     validates :email, uniqueness: { scope: :sub_email, message:" already shared" }
     validate :check_equals
     validate :check_sub_email
-
-
-
-  
 end
-
